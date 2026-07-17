@@ -514,26 +514,43 @@ img{ max-width:100%; display:block; }
 }
 .lesson-nav-btn{
   display:flex; flex-direction: column; gap: 0.3rem; max-width: 45%;
-  padding: 1rem 1.2rem; border-radius: 12px; border: 1px solid rgba(238,242,249,0.1);
-  transition: border-color .18s ease, transform .18s ease;
+  padding: 1rem 1.2rem; border-radius: 12px;
+  background: var(--bull);
+  border: 1px solid rgba(6,20,15,0.15);
+  transition: background .18s ease, transform .18s ease, box-shadow .18s ease;
 }
-.lesson-nav-btn:hover{ border-color: var(--bull); transform: translateY(-2px); }
+.lesson-nav-btn:hover{ background: var(--bull-dim); transform: translateY(-2px); box-shadow: 0 10px 26px -12px rgba(31,203,140,0.55); }
 .lesson-nav-btn.next{ text-align: right; margin-left: auto; }
-.lesson-nav-btn small{ font-family: var(--mono); color: var(--mist); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; }
-.lesson-nav-btn span{ font-weight: 600; font-size: 0.95rem; }
+.lesson-nav-btn small{ font-family: var(--mono); color: rgba(6,20,15,0.65); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.lesson-nav-btn span{ font-weight: 600; font-size: 0.95rem; color: #06140F; }
 
 /* course hub */
 .course-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 3rem; }
 .course-card{
-  background: var(--panel-2); border: 1px solid rgba(238,242,249,0.07);
+  background: var(--bull); color: #06140F;
+  border: 1px solid rgba(6,20,15,0.15);
   border-radius: 16px; padding: 1.8rem; display:flex; flex-direction:column; gap: 0.8rem;
-  transition: border-color .18s ease, transform .18s ease;
+  transition: background .18s ease, transform .18s ease, box-shadow .18s ease;
 }
-.course-card:hover{ border-color: var(--bull); transform: translateY(-4px); }
-.course-step{ font-family: var(--mono); font-size: 0.78rem; color: var(--gold); }
-.course-card h3{ font-size: 1.1rem; margin: 0; }
-.course-card p{ color: var(--mist); font-size: 0.9rem; margin: 0; flex: 1; }
-.course-card .link-arrow{ align-self: flex-start; color: var(--bull); font-family: var(--mono); }
+.course-card:hover{ background: var(--bull-dim); transform: translateY(-4px); box-shadow: 0 14px 34px -14px rgba(31,203,140,0.55); }
+.course-step{ font-family: var(--mono); font-size: 0.78rem; color: #06140F; opacity: 0.7; font-weight: 600; }
+.course-card h3{ font-size: 1.1rem; margin: 0; color: #06140F; }
+.course-card p{ color: rgba(6,20,15,0.72); font-size: 0.9rem; margin: 0; flex: 1; }
+.course-card .link-arrow{
+  align-self: flex-start;
+  color: var(--bull);
+  background: #06140F;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.course-card:hover .link-arrow{
+  transform: translateX(2px);
+  box-shadow: 0 6px 18px -6px rgba(6,20,15,0.4);
+}
 
 @media (max-width: 900px){
   .lesson-layout{ grid-template-columns: 1fr; }
@@ -545,4 +562,143 @@ img{ max-width:100%; display:block; }
   .lesson-nav-buttons{ flex-direction: column; }
   .lesson-nav-btn{ max-width: 100%; }
   .lesson-nav-btn.next{ text-align: left; margin-left: 0; }
+}
+
+/* ===================================================================
+   Live market view (TradingView ticker tape widget)
+   =================================================================== */
+.live-market-wrap{
+  background: var(--panel);
+  border-top: 1px solid rgba(238,242,249,0.07);
+  border-bottom: 1px solid rgba(238,242,249,0.07);
+  padding: 0.6rem 0;
+}
+.live-market-label{
+  display:flex; align-items:center; gap:0.4rem;
+  font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--mist); max-width: 1200px; margin: 0 auto 0.4rem;
+  padding: 0 1.5rem;
+}
+.live-market-label .live-dot{
+  width:6px; height:6px; border-radius:50%; background: var(--bull);
+  box-shadow: 0 0 8px 2px rgba(31,203,140,0.7);
+  animation: livePulse 1.6s ease-in-out infinite;
+}
+@keyframes livePulse{
+  0%,100%{ opacity:1; } 50%{ opacity:0.35; }
+}
+.tradingview-widget-container{ width:100%; }
+
+/* ===================================================================
+   Ad slots
+   =================================================================== */
+.ad-slot-wrap{
+  display:flex; flex-direction:column; align-items:center; gap:0.5rem;
+  padding: 1.8rem 1.5rem;
+}
+.ad-slot-label{
+  font-family: var(--mono); font-size: 0.68rem; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--mist); opacity: 0.65;
+}
+.ad-slot{
+  width: 100%; max-width: 468px; min-height: 60px;
+  display:flex; align-items:center; justify-content:center;
+  background: var(--panel-2);
+  border: 1px solid rgba(238,242,249,0.07);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* ===================================================================
+   Dedicated Markets page (wide-screen advanced view)
+   =================================================================== */
+.markets-hero{
+  max-width: var(--container); margin: 0 auto; padding: 6.5rem 1.5rem 1.5rem;
+}
+.markets-hero .lesson-kicker{
+  font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--gold); margin: 0 0 1rem; display:flex; align-items:center; gap:0.5rem;
+}
+.markets-hero h1{
+  font-size: clamp(1.8rem, 3.6vw, 2.6rem); font-weight: 600; line-height: 1.15; margin-bottom: 0.8rem;
+}
+.markets-hero p{ color: var(--mist); font-size: 1.02rem; max-width: 680px; }
+
+.markets-wide-wrap{
+  width: 100%; max-width: 1600px; margin: 0 auto; padding: 0 1.5rem 1.5rem;
+}
+.markets-panel{
+  background: var(--panel); border: 1px solid rgba(238,242,249,0.07);
+  border-radius: 16px; padding: 1.2rem; margin-bottom: 1.5rem; overflow: hidden;
+}
+.markets-panel-label{
+  font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--mist); margin: 0 0 1rem;
+  display:flex; align-items:center; gap:0.4rem;
+}
+.markets-panel-label .live-dot{
+  width:6px; height:6px; border-radius:50%; background: var(--bull);
+  box-shadow: 0 0 8px 2px rgba(31,203,140,0.7);
+  animation: livePulse 1.6s ease-in-out infinite;
+}
+.markets-chart-panel{
+  resize: vertical;
+  overflow: hidden;
+  height: 760px;
+  min-height: 480px;
+  max-height: 1200px;
+}
+.markets-chart-panel .tradingview-widget-container,
+.markets-chart-panel .tradingview-widget-container__widget{
+  height: 100%;
+  width: 100%;
+}
+.markets-grid-2{
+  display:grid; grid-template-columns: 1.3fr 1fr; gap: 1.5rem;
+}
+@media (max-width: 1100px){
+  .markets-grid-2{ grid-template-columns: 1fr; }
+  .markets-chart-panel{ height: 520px; }
+}
+@media (max-width: 640px){
+  .markets-chart-panel{ height: 420px; resize: none; }
+}
+
+/* ===================================================================
+   Homepage — larger, adjustable live candlestick chart
+   =================================================================== */
+.live-chart-section{
+  padding: 0 1.5rem 2.5rem;
+}
+.live-chart-inner{
+  max-width: var(--container); margin: 0 auto;
+}
+.live-chart-header{
+  display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between;
+  gap: 1rem; margin-bottom: 1rem;
+}
+.live-chart-header h2{
+  font-size: clamp(1.3rem, 2.4vw, 1.8rem); font-weight: 600; margin: 0.3rem 0 0.3rem;
+}
+.live-chart-header p{ color: var(--mist); font-size: 0.92rem; margin: 0; max-width: 520px; }
+.live-chart-panel{
+  background: var(--panel); border: 1px solid rgba(238,242,249,0.07);
+  border-radius: 16px; padding: 0.75rem;
+  resize: vertical;
+  overflow: hidden;
+  height: 560px;
+  min-height: 360px;
+  max-height: 900px;
+}
+.live-chart-panel .tradingview-widget-container,
+.live-chart-panel .tradingview-widget-container__widget{
+  height: 100%; width: 100%;
+}
+.live-chart-resize-hint{
+  display:flex; align-items:center; gap:0.4rem;
+  font-family: var(--mono); font-size: 0.72rem; color: var(--mist); opacity:0.75;
+  margin-top: 0.6rem;
+}
+@media (max-width: 640px){
+  .live-chart-panel{ height: 420px; resize: none; }
 }
