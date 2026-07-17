@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Risk Management — Lesson 04 | Reshkevo FX</title>
+<meta name="description" content="Position sizing, stop-loss placement, risk-reward ratios, and the risk-of-ruin math that explains why risk management is the skill that keeps traders in the game.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="grain"></div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="../index.html#top" class="brand">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M3 18 L8 11 L12 14 L21 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 4 H21 V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="brand-text">RESHKEVO <em>FX</em></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Learn</a>
+      <a href="../index.html#philosophy">Philosophy</a>
+      <a href="../index.html#academy">Academy</a>
+      <a href="../index.html#calculator">Risk Calculator</a>
+      <a href="../index.html#community">Community</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <a href="https://chat.whatsapp.com/JxE2vjB5hwqFQTV63z1jVW?s=cl&p=a&ilr=4&amv=3" target="_blank" rel="noopener" class="btn btn-primary nav-cta">Join WhatsApp</a>
+    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="breadcrumbs"><a href="../index.html#top">Home</a><span>/</span><a href="index.html">Learn</a><span>/</span>Lesson 04</div>
+
+<section class="lesson-hero">
+  <p class="lesson-kicker">Lesson 04 of 5</p>
+  <h1 class="lesson-title">Risk management</h1>
+  <p class="lesson-dek">This is the lesson the whole academy is named after. Everything before this was context. This is the part that actually determines whether you're still trading in a year.</p>
+  <div class="lesson-meta"><span>&#9200; 9 min read</span><span>&#128218; Core discipline</span></div>
+</section>
+
+<div class="lesson-layout">
+  <article class="prose">
+
+    <h2 id="sizing">Position sizing: the decision that comes first</h2>
+    <p>Most new traders decide how many lots to trade based on how confident they feel about a setup. Risk-first traders do the opposite: the size is calculated from the account and the stop-loss, before confidence enters the conversation at all.</p>
+    <div class="formula-box">
+      Risk amount = Account balance &times; Risk % per trade<br>
+      Position size (lots) = Risk amount &divide; (Stop-loss in pips &times; pip value per lot)
+    </div>
+    <p>Worked example: a &#36;1,000 account, risking 1% per trade, with a 25-pip stop-loss on EUR/USD (&#36;10/pip per standard lot):</p>
+    <ul>
+      <li>Risk amount = &#36;1,000 &times; 1% = &#36;10</li>
+      <li>Position size = &#36;10 &divide; (25 &times; &#36;10) = 0.04 standard lots (4 micro lots)</li>
+    </ul>
+    <p>Notice what drives the size: the stop-loss distance and the risk percentage. Not a gut feeling, not "I really like this trade." Use the <a href="../index.html#calculator">risk calculator</a> on the homepage to run this for your own numbers before every entry.</p>
+
+    <h2 id="stop-loss">The stop-loss is part of the trade, not an afterthought</h2>
+    <p>A stop-loss is a predefined exit that closes the trade automatically if price moves against you to a certain level. Two practical rules:</p>
+    <ul>
+      <li><strong>Set it based on where the trade idea is proven wrong</strong> &mdash; a level on the chart, like beyond a recent swing high/low &mdash; not based on "how much money I'm willing to lose." Those are different questions; only the first tells you where the setup actually fails.</li>
+      <li><strong>Size the position to fit that stop</strong>, using the formula above &mdash; never widen a stop to make a position "fit" your account. If the correct stop makes the position too small to feel exciting, that's information about the trade, not a reason to remove the stop.</li>
+    </ul>
+
+    <h2 id="risk-reward">Risk-reward ratio</h2>
+    <p>Risk-reward compares what you stand to lose against what you stand to gain if the trade works: a stop 20 pips away and a target 60 pips away is a 1:3 risk-reward ratio. This matters because it changes how often you need to be right to be profitable overall.</p>
+    <table class="data-table">
+      <thead><tr><th>Risk-reward ratio</th><th>Win rate needed to break even</th></tr></thead>
+      <tbody>
+        <tr><td>1:1</td><td>50%</td></tr>
+        <tr><td>1:2</td><td>33%</td></tr>
+        <tr><td>1:3</td><td>25%</td></tr>
+      </tbody>
+    </table>
+    <p>This is exactly why traders with a favourable risk-reward ratio can be profitable while being wrong more often than they're right &mdash; the size of the wins compensates for the frequency of the losses.</p>
+
+    <h2 id="ruin">Why the math punishes big losses so hard</h2>
+    <p>Losses and the gains needed to recover from them are not symmetrical. This is the single most under-appreciated fact in trading:</p>
+    <table class="data-table">
+      <thead><tr><th>Loss on account</th><th>Gain required to recover</th></tr></thead>
+      <tbody>
+        <tr><td>10%</td><td>11%</td></tr>
+        <tr><td>25%</td><td>33%</td></tr>
+        <tr><td>50%</td><td>100%</td></tr>
+        <tr><td>75%</td><td>300%</td></tr>
+        <tr><td>90%</td><td>900%</td></tr>
+      </tbody>
+    </table>
+    <div class="callout callout-warn">
+      <span class="callout-label">The whole point of this lesson</span>
+      <p>A 50% drawdown doesn't need a 50% gain to recover &mdash; it needs a 100% gain, because you're now recovering from a smaller base. This is why capping risk per trade (commonly 1&ndash;2%) and capping total risk across all open trades at once matters more than any entry signal. A strategy with a real edge can still fail an account that risks too much per trade; a mediocre strategy with strict risk control usually survives long enough to improve.</p>
+    </div>
+
+    <h2 id="caps">Setting a risk ceiling, not just a per-trade rule</h2>
+    <p>Beyond sizing each trade individually, most risk-first traders also cap:</p>
+    <ul>
+      <li><strong>Total open risk</strong> &mdash; the combined risk of every position open at once, so five simultaneous trades don't quietly add up to 10% of the account at risk.</li>
+      <li><strong>Weekly or monthly loss limits</strong> &mdash; a fixed drawdown level (for example, 5% in a week) that triggers a pause, a review of what's going wrong, and a reset &mdash; rather than trading through a losing streak trying to "win it back."</li>
+    </ul>
+
+    <h2 id="next">What's next</h2>
+    <p>The math above only works if you actually follow it under pressure. Lesson 05 covers the psychology side &mdash; why the same rules that are easy to agree with on paper are hard to keep after three losing trades in a row.</p>
+
+    <div class="lesson-nav-buttons">
+      <a class="lesson-nav-btn" href="reading-charts.html"><small>Previous</small><span>&larr; Reading a chart</span></a>
+      <a class="lesson-nav-btn next" href="trading-psychology.html"><small>Next lesson</small><span>Trading psychology &rarr;</span></a>
+    </div>
+  </article>
+
+  <aside class="lesson-sidebar">
+    <div class="sidebar-sticky">
+      <div class="sidebar-card">
+        <p class="sidebar-title">On this page</p>
+        <ul class="toc-list">
+          <li><a href="#sizing">Position sizing</a></li>
+          <li><a href="#stop-loss">Stop-loss placement</a></li>
+          <li><a href="#risk-reward">Risk-reward ratio</a></li>
+          <li><a href="#ruin">Why big losses hurt more</a></li>
+          <li><a href="#caps">Setting a risk ceiling</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <p class="sidebar-title">Course</p>
+        <ul class="toc-list">
+          <li><a href="what-is-forex.html">01 &middot; What is forex?</a></li>
+          <li><a href="pips-lots-leverage.html">02 &middot; Pips, lots &amp; leverage</a></li>
+          <li><a href="reading-charts.html">03 &middot; Reading a chart</a></li>
+          <li><a href="risk-management.html"><strong>04 &middot; Risk management</strong></a></li>
+          <li><a href="trading-psychology.html">05 &middot; Trading psychology</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <p class="sidebar-title">Use it now</p>
+        <p style="font-size:0.85rem; color:var(--mist); margin-bottom:0.9rem;">Run your own numbers through the live calculator before your next trade.</p>
+        <a href="../index.html#calculator" class="btn btn-primary" style="width:100%; font-size:0.85rem; padding:0.7rem;">Open risk calculator</a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><span class="brand-text">RESHKEVO <em>FX</em></span><p>Mr Risk FX Forex Academy &mdash; risk management first.</p></div>
+    <div class="footer-links">
+      <a href="../index.html#philosophy">Philosophy</a>
+      <a href="../index.html#academy">Academy</a>
+      <a href="../index.html#calculator">Risk Calculator</a>
+      <a href="../index.html#community">Community</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+  </div>
+  <p class="risk-warning">Risk warning: trading forex and CFDs is speculative and carries a high level of risk to your capital. Past performance is not indicative of future results. Nothing on this site constitutes financial advice. Only trade with capital you can afford to lose, and seek independent advice if you are unsure.</p>
+  <p class="copyright">&copy; <span id="year"></span> Reshkevo FX. All rights reserved.</p>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

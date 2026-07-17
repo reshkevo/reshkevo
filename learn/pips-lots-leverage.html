@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pips, Lots &amp; Leverage — Lesson 02 | Reshkevo FX</title>
+<meta name="description" content="How pips are measured, what a lot actually costs, and how leverage and margin work — including why leverage magnifies losses as much as gains.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="grain"></div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="../index.html#top" class="brand">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M3 18 L8 11 L12 14 L21 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 4 H21 V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="brand-text">RESHKEVO <em>FX</em></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Learn</a>
+      <a href="../index.html#philosophy">Philosophy</a>
+      <a href="../index.html#academy">Academy</a>
+      <a href="../index.html#calculator">Risk Calculator</a>
+      <a href="../index.html#community">Community</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <a href="https://chat.whatsapp.com/JxE2vjB5hwqFQTV63z1jVW?s=cl&p=a&ilr=4&amv=3" target="_blank" rel="noopener" class="btn btn-primary nav-cta">Join WhatsApp</a>
+    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="breadcrumbs"><a href="../index.html#top">Home</a><span>/</span><a href="index.html">Learn</a><span>/</span>Lesson 02</div>
+
+<section class="lesson-hero">
+  <p class="lesson-kicker">Lesson 02 of 5</p>
+  <h1 class="lesson-title">Pips, lots &amp; leverage</h1>
+  <p class="lesson-dek">The units that turn a price move on a screen into an actual dollar amount in your account. Get comfortable with these before you place a single trade.</p>
+  <div class="lesson-meta"><span>&#9200; 7 min read</span><span>&#128218; Foundations</span></div>
+</section>
+
+<div class="lesson-layout">
+  <article class="prose">
+
+    <h2 id="pips">What a pip is</h2>
+    <p>A <strong>pip</strong> (percentage in point) is the standard unit for measuring a price move in forex. For most pairs it's the fourth decimal place; for pairs involving the Japanese yen, it's the second decimal place.</p>
+    <div class="formula-box">EUR/USD moves from 1.0850 to 1.0860 &rarr; that's 10 pips<br>USD/JPY moves from 148.20 to 148.50 &rarr; that's 30 pips</div>
+    <p>Some brokers quote an extra "fractional pip" digit (a 5th decimal on most pairs, 3rd on JPY pairs) &mdash; that's usually called a <strong>pipette</strong>, one-tenth of a pip.</p>
+
+    <h2 id="lots">What a lot is</h2>
+    <p>A <strong>lot</strong> is a standardized trade size &mdash; it's how the market measures how much currency you're actually buying or selling.</p>
+    <table class="data-table">
+      <thead><tr><th>Lot type</th><th>Units of base currency</th><th>Approx. value per pip (EUR/USD)</th></tr></thead>
+      <tbody>
+        <tr><td>Standard lot</td><td>100,000</td><td>&#36;10</td></tr>
+        <tr><td>Mini lot</td><td>10,000</td><td>&#36;1</td></tr>
+        <tr><td>Micro lot</td><td>1,000</td><td>&#36;0.10</td></tr>
+      </tbody>
+    </table>
+    <p>That pip value is exactly why lot size, not "how many trades," is the real lever on your risk. A 20-pip stop-loss on 1 standard lot risks roughly &#36;200. The same 20-pip stop on 1 micro lot risks roughly &#36;2. Same setup, same chart &mdash; wildly different risk, purely because of size.</p>
+    <div class="callout">
+      <span class="callout-label">Where this connects</span>
+      <p>This is exactly the math behind the risk calculator on the homepage: you tell it your account, your risk per trade and your stop distance, and it works backward to the lot size that keeps your risk where you want it.</p>
+    </div>
+
+    <h2 id="leverage">Leverage: borrowed size, not borrowed money you keep</h2>
+    <p>Leverage lets you control a large position with a small amount of your own capital, expressed as a ratio like 1:50, 1:100 or 1:500. Your broker sets aside a portion of your account &mdash; the <strong>margin</strong> &mdash; to open the trade.</p>
+    <div class="formula-box">Margin required = Position size &divide; Leverage<br>Example: &#36;100,000 position at 1:100 leverage = &#36;1,000 margin required</div>
+    <p>Leverage doesn't change how many pips a currency moves. It changes how much of your own capital is tied up controlling that position &mdash; and therefore how large your profit or loss is relative to your account, in both directions equally.</p>
+
+    <h3>A worked example</h3>
+    <p>Say you open 1 standard lot of EUR/USD (&#36;10/pip) with a &#36;2,000 account:</p>
+    <ul>
+      <li>A 20-pip favourable move: +&#36;200, a 10% account gain.</li>
+      <li>A 20-pip adverse move: -&#36;200, a 10% account loss.</li>
+      <li>A 100-pip adverse move without a stop-loss: -&#36;1,000, half the account gone.</li>
+    </ul>
+    <div class="callout callout-warn">
+      <span class="callout-label">Why this is the lesson people skip</span>
+      <p>Leverage is often marketed purely as opportunity. Mechanically, it's neutral &mdash; it magnifies whatever happens, good or bad, at the same rate. High leverage with no stop-loss and an oversized lot is the single most common way retail accounts are wiped out. High leverage combined with a small, deliberately sized position is just efficient use of capital. The leverage number itself isn't the risk; the position size you choose to run at that leverage is.</p>
+    </div>
+
+    <h2 id="margin-call">Margin calls, briefly</h2>
+    <p>If losses on open positions erode your account equity down toward the margin being used, your broker will issue a <strong>margin call</strong> asking you to add funds or reduce positions, and may automatically close trades ("stop-out") to protect both you and itself from a negative balance. This is a mechanical safety net, not a strategy &mdash; the goal of good risk management is to never get near it.</p>
+
+    <h2 id="next">What's next</h2>
+    <p>You now know how price moves are measured and what actually happens to your account when they do. Lesson 03 moves to the chart itself &mdash; how to read candles, timeframes and the basic structure of trend.</p>
+
+    <div class="lesson-nav-buttons">
+      <a class="lesson-nav-btn" href="what-is-forex.html"><small>Previous</small><span>&larr; What is forex?</span></a>
+      <a class="lesson-nav-btn next" href="reading-charts.html"><small>Next lesson</small><span>Reading a chart &rarr;</span></a>
+    </div>
+  </article>
+
+  <aside class="lesson-sidebar">
+    <div class="sidebar-sticky">
+      <div class="sidebar-card">
+        <p class="sidebar-title">On this page</p>
+        <ul class="toc-list">
+          <li><a href="#pips">What a pip is</a></li>
+          <li><a href="#lots">What a lot is</a></li>
+          <li><a href="#leverage">Leverage &amp; margin</a></li>
+          <li><a href="#margin-call">Margin calls</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <p class="sidebar-title">Course</p>
+        <ul class="toc-list">
+          <li><a href="what-is-forex.html">01 &middot; What is forex?</a></li>
+          <li><a href="pips-lots-leverage.html"><strong>02 &middot; Pips, lots &amp; leverage</strong></a></li>
+          <li><a href="reading-charts.html">03 &middot; Reading a chart</a></li>
+          <li><a href="risk-management.html">04 &middot; Risk management</a></li>
+          <li><a href="trading-psychology.html">05 &middot; Trading psychology</a></li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><span class="brand-text">RESHKEVO <em>FX</em></span><p>Mr Risk FX Forex Academy &mdash; risk management first.</p></div>
+    <div class="footer-links">
+      <a href="../index.html#philosophy">Philosophy</a>
+      <a href="../index.html#academy">Academy</a>
+      <a href="../index.html#calculator">Risk Calculator</a>
+      <a href="../index.html#community">Community</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+  </div>
+  <p class="risk-warning">Risk warning: trading forex and CFDs is speculative and carries a high level of risk to your capital. Past performance is not indicative of future results. Nothing on this site constitutes financial advice. Only trade with capital you can afford to lose, and seek independent advice if you are unsure.</p>
+  <p class="copyright">&copy; <span id="year"></span> Reshkevo FX. All rights reserved.</p>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
